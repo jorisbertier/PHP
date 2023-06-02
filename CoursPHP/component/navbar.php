@@ -19,7 +19,7 @@
             <li><a class="dropdown-item" href="/page/function.php">Fonction</a></li>
             <li><a class="dropdown-item" href="/page/get.php">Get</a></li>
             <li><a class="dropdown-item" href="/exo/random.php">Rand</a></li>
-            <li><a class="dropdown-item" href="/exo/random.php">Form</a></li>
+            <li><a class="dropdown-item" href="/page/form.php">Form</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -50,6 +50,8 @@
             <li><a class="dropdown-item" href="/exo/API_REGION.php">API REGION</a></li>
             <li><a class="dropdown-item" href="/exo/API_DEPARTEMENT.php">API DEPARTEMENT</a></li>
             <li><a class="dropdown-item" href="/exo/API_COMMUNE.php">API COMMUNE</a></li>
+            <li><a class="dropdown-item" href="/exo/API_HARRYPOTTER.php">API HARRYPOTTER</a></li>
+            <li><a class="dropdown-item" href="/exo/API_HARRYPOTTER.php">API HARRYPOTTER</a></li>
             <li><a class="dropdown-item" href="/exo/API_HARRYPOTTER.php">API HARRYPOTTER</a></li>
           </ul>
         </li>
