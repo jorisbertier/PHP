@@ -1,0 +1,30 @@
+.maison {
+    height: 45px !important;
+    width: 45px !important;
+    object-fit: cover;
+
+}
+
+.heart {
+    position: relative;
+  }
+  
+  .logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+  }
+
+  .logo1 {
+    height: 30px;
+    width: 30px;
+  }
+.card-body {
+    text-align: center;
+}
+
+.imgPrincipal {
+    height: 400px;
+    object-fit: cover;
+}
