@@ -52,7 +52,7 @@
             <li><a class="dropdown-item" href="/exo/API_COMMUNE.php">API COMMUNE</a></li>
             <li><a class="dropdown-item" href="/exo/API_HARRYPOTTER.php">API HARRYPOTTER</a></li>
             <li><a class="dropdown-item" href="/exo/API_HARRYPOTTER.php">API HARRYPOTTER</a></li>
-            <li><a class="dropdown-item" href="/exo/formEx1php">FormEx1</a></li>
+            <li><a class="dropdown-item" href="/exo/formEx1.php">FormEx1</a></li>
             <li><a class="dropdown-item" href="/exo/formEx2.php">FormEx2</a></li>
             <li><a class="dropdown-item" href="/exo/formEx3.php">FormEx3</a></li>
             <li><a class="dropdown-item" href="/exo/formEx3.php">FormEx3</a></li>

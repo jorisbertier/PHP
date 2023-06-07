@@ -9,41 +9,50 @@ Chat donne : chafeat
 </p>
 <?php 
 
+$word = "chat";
+$voyelle = ["a", "e", "i", "o", "u", "y"];
 
-
-// $txt = "Il est l'heure de manger la soupe";
-// $tab = "aeiouy";
-// $tab = str_split($tab);
-// $tot = 0;
-
-
-// foreach($tab as $voyelle){
-//  $tot += substr_count(strtolower($txt), $voyelle);
-// }
-// echo $tot.' voyelles';  // Affiche le total si tu veux, sinon autre chose
-
-//EXO 9
-$word = 'chat';
-$voyelle = ['a', 'e', 'i', 'o', 'u', 'y'];
-
-echo '<br>';
-function returnCompiledWord(string $myWord, array $voyelle): string
-{
-    $strTab = str_split($myWord);
-
-    $newString = '';
-
-    foreach ($strTab as $value) {
-        if (in_array($value, $voyelle)) {
-            $newString .= $value . "fe";
+function ajout(string $word, array $voyelle) {
+    $word = str_split($word);
+    $newWord = "";
+    
+    foreach ($word as $item) {
+        if (in_array($item, $voyelle)) {
+            $newWord .= $item . "fe".$item;
+        } else {
+            $newWord .= $item;
         }
-        $newString.= $value;
     }
-
-    return $newString;
+    
+    return $newWord;
 }
 
-echo returnCompiledWord($word, $voyelle);
+echo ajout($word, $voyelle);
+
+
+
+//EXO 9
+// $word = 'chat';
+// $voyelle = ['a', 'e', 'i', 'o', 'u', 'y'];
+
+// echo '<br>';
+// function returnCompiledWord(string $myWord, array $voyelle): string
+// {
+//     $strTab = str_split($myWord);
+
+//     $newString = '';
+
+//     foreach ($strTab as $value) {
+//         if (in_array($value, $voyelle)) {
+//             $newString .= $value . "fe";
+//         }
+//         $newString.= $value;
+//     }
+
+//     return $newString;
+// }
+
+// echo returnCompiledWord($word, $voyelle);
 
 ?>
 

@@ -12,7 +12,7 @@ if(isset($_POST['mail'])) {
     if(preg_match($pattern, $mail)) {
         $isMailOk = true;
     } else {
-        header('Location: formEx1.php?status=error');
+        header('Location: formEx1.php?status_mail=error');
         exit();
     }
 }
@@ -33,7 +33,7 @@ if(isset($_POST['msg'])) {
     
 }
 
-if($isBanOk && $isMailOk){
+if($isBanOk = true && $isMailOk = true){
     header('Location: formEx1.php?status_msg=success&status=success');
     exit();
 }

@@ -8,27 +8,59 @@
 <?php 
 
 
-function deleteNumber(array $array)
-{
+
+
+
+
+
+
+
+$array = [1,2,2,3,2, 3, 4, 5, 6];
+
+
+function deleteDouble(array $array) : void {
+
+	$array = array_unique($array);
 	
-
-	$returnArray = [];
-	foreach($array as $item){
-
-		$isInArray = in_array($item, $returnArray);
-
-		if($isInArray === false){
-			$returnArray[] = $item;
-		}
+	foreach($array as $item) {
+		echo $item. " ";
 	}
-	echo implode(' ', $array);
-	echo '<br>';
-	echo implode(' ', $returnArray);
 }
 
-$array = [1, 1, 2, 3, 3, 3, 4, 5];
+echo deleteDouble($array);
 
-deleteNumber($array);
+
+
+
+
+
+// function deleteNumber(array $array)
+// {
+	
+
+// 	$returnArray = [];
+// 	foreach($array as $item){
+
+// 		$isInArray = in_array($item, $returnArray);
+
+// 		if($isInArray === false){
+// 			$returnArray[] = $item;
+// 		}
+// 	}
+// 	echo implode(' ', $array);
+// 	echo '<br>';
+// 	echo implode(' ', $returnArray);
+// }
+
+// $array = [1, 1, 2, 3, 3, 3, 4, 5];
+
+// deleteNumber($array);
+
+
+
+
+
+
 // function removeDuplicates(array $array)
 // {
 //     $uniqueArray = [];

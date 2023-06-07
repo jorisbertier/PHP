@@ -30,20 +30,31 @@
 
 <?php
 
-if(isset($_GET['status']) && isset($_GET['status_msg'])) {
-    $status = $_GET['status'];
-    $statusMsg = $_GET['status_msg'];
-        if($status !== 'success' && $statusMsg !== 'success') {
-            echo 'Mail et mot invalide';
-        }
-        elseif($status !== 'success') {
+if(isset($_GET['status_mail'])) {
+    $statusMail = $_GET['status_mail'];
+    
+
+        if($statusMail == 'error') {
             echo "Email invalide";
-        }elseif($statusMsg !== 'success') {
-            echo "Mot interdit";
-        }else{
-            echo "compte créée";
         }
 }
+
+if(isset($_GET['status_msg'])) {
+    $statusMsg = $_GET['status_msg'];
+
+        if($statusMsg == 'error') {
+        echo "Mot interdit";
+        }
+}
+
+if(isset($_GET['status'])) {
+    $status = $_GET['status'];
+
+    if($status == "success") {
+        echo "Compte créer ";
+    }
+}
+    
 
 ?>
 
