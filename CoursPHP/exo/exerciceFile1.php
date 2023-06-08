@@ -1,98 +1,56 @@
-<?php include_once __DIR__ . '/../component/header.php';
-include_once __DIR__ . '/../functun-dump.php';
+<?php include_once __DIR__ . '/../component/header.php';?>
 
-?>
-<p>## Exercice 15 ##
-Un jeu de Yahtzee ! Attention plûtot difficile dans l'algo (même très difficile, attention aux noeuds au cerveau) !
-Faire une fonction qui simule un jeu de yatzee (https://fr.wikipedia.org/wiki/Yahtzee)
-   Le Yatzee est un jeu de lancer de dé (au nombre de 5)
-   Vous devrez afficher chaque lancé de dé random, on va rester simple et afficher quelque chose de ce style :
-   (1) (4) (6) (2) (4)
-   
-   Une fois le lancé affiché, la fonction doit informer l'utilisateur de ce qu'il a fait :
-   - Brelan (3 dés du même résultat)
-   - Carré (4 dés du même résultat)
-   - Full (3 dés du même résultat et 2 dés du même résultat)
-   - Yams (5 dés du même résultat)
-   - Petite suite : 4 dés se suivent (1, 2, 3, 4 ou 2, 3, 4, 5 ou 3, 4, 5, 6)
-   - Grande suite : les 5 dés se suivent
 
-	Exemple à afficher à l'utilisateur une fois les calculs terminés : 
-	(2) (2) (4) (4) (4)
-	Est ce une grande suite : Non
-	Est ce une petite suite : Non
-	Est ce que c'est un Yatzhee : Non
-	Est ce que c'est un Square : Non
-	Est ce que c'est un Full : Oui
-	Est ce que c'est un Brelan : Oui
-
-</p>
+<h2>Uploader un fichier</h2>
 <?php 
 
+var_dump($_POST);
+echo "<pre>";
+var_dump($_FILES);
+echo "</pre>";
 
+if(isset($_FILES["my_super_file"])) {
 
-function lancerDee() {
-
-    $dee = [rand(1,6), rand(1,6), rand(1,6), rand(1,6), rand(1,6), rand(1,6)];
+    $fileName = pathinfo($_FILES['my_super_file']['name'], PATHINFO_FILENAME);
+    $fileType = pathinfo($_FILES['my_super_file']['name'], PATHINFO_EXTENSION);
+    $fileSize = $_FILES['my_super_file']['size'];
+    $safeFileName = $fileName."-". uniqid().'.'.$fileType;
+    echo gettype($fileSize);
     
-    
-    if(isYams($dee)) {
-        echo "C'est un Yhatzee";
+
+$isValid = true;
+    if($fileType == "jpg") {
+        $isValid = false;
+        echo "Pas de jpg accepter<br>";
     }
-    if(isBrelan($dee)){
-        echo "C'est un Brelan";
+    if($fileSize > 1500) {
+        $isValid = false;
+        echo "Au dessus de 1500 octets non accepter<br>";
     }
-    if(isCarre($dee)) {
-        echo "C'est un carré";
-    }
+
+if($isValid == true) {
+
+    move_uploaded_file(
+        $_FILES["my_super_file"]['tmp_name'],
+        __DIR__ . '/../upload/'. $safeFileName
+    );
+    echo "Fichier accepter";
+}
     
-
-    // $isGrandeSuite = isGrandeSuite($dee);
-    // if($isGrandeSuite === true){
-
-    // }
-
-    var_dump($dee);
-
-}
-
-function isGrandeSuite(array $dee): bool{
-
-    return true;
-}
-
-function isCarre(array $dee): bool {
-    return count(array_unique($dee)) === 4;
-}
-
-function isBrelan(array $dee): bool {
-    return count(array_unique($dee)) === 3;
-
 }
 
 
-function isFull(array $dee): bool {
-    
-    return true;
-}
-
-function isPeiteSuite(array $dee): bool {
-
-
-}
-
-function isYams(array $dee): bool {
-    // if($dee[0] == $dee[1] == $dee[2] == $dee[3] == $dee[4] == $dee[5]){
-    //     return true;
-    // }
-    return count(array_unique($dee)) === 1;
-
-}
-
-lancerDee();
-
-// echo $dee[rand(0,5)];
 
 ?>
+
+
+<form action="" method="post" enctype="multipart/form-data">
+    <label for="my_file">Ajouter un fichier</label>
+    <input type="file" name="my_super_file" id="my_file">
+
+    <button type="submit">Valider</button>
+</form>
+
+
 
 <?php include_once __DIR__ . '/../component/footer.php' ?>, 

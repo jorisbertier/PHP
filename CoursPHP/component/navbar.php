@@ -20,6 +20,7 @@
             <li><a class="dropdown-item" href="/page/get.php">Get</a></li>
             <li><a class="dropdown-item" href="/exo/random.php">Rand</a></li>
             <li><a class="dropdown-item" href="/page/form.php">Form</a></li>
+            <li><a class="dropdown-item" href="/page/file.php">File</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -56,6 +57,7 @@
             <li><a class="dropdown-item" href="/exo/formEx2.php">FormEx2</a></li>
             <li><a class="dropdown-item" href="/exo/formEx3.php">FormEx3</a></li>
             <li><a class="dropdown-item" href="/exo/formEx3.php">FormEx3</a></li>
+            <li><a class="dropdown-item" href="/exo/exerciceFile1.php">Exercice file 1</a></li>
 
           </ul>
         </li>
