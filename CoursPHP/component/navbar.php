@@ -21,6 +21,7 @@
             <li><a class="dropdown-item" href="/exo/random.php">Rand</a></li>
             <li><a class="dropdown-item" href="/page/form.php">Form</a></li>
             <li><a class="dropdown-item" href="/page/file.php">File</a></li>
+            <li><a class="dropdown-item" href="/page/intro_poo.php">Intro poo</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
